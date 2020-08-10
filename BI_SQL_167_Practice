@@ -1,0 +1,8 @@
+# employee number of 10 highest paid employees in the database
+
+SELECT 
+    emp_no
+FROM
+    salaries
+ORDER BY salary DESC
+LIMIT 10;
