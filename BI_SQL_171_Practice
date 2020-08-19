@@ -1,0 +1,8 @@
+#How many departments are there in the “employees” database? Use the ‘dept_emp’ table to answer the question.
+
+select * from dept_emp;
+
+SELECT 
+    COUNT(distinct dept_no)
+FROM
+    dept_emp;
