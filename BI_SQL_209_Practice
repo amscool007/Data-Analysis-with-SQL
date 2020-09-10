@@ -1,0 +1,13 @@
+#209
+# Return a list with the first 10 employees with all the departments they can be assigned to.
+# Hint: Don’t use LIMIT; use a WHERE clause.
+
+select * from employees;
+
+select * from departments;
+
+select e.*, d.* 
+from employees e
+cross join departments d
+where emp_no < 10011
+order by emp_no;
