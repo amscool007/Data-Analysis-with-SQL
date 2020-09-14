@@ -1,0 +1,29 @@
+#213
+# Select all managers’ first and last name, hire date, job title, start date, and department name.
+
+select * from employees;
+
+select * from departments;
+
+select * from dept_manager;
+
+select * from titles;
+
+SELECT 
+    e.first_name,
+    e.last_name,
+    e.hire_date,
+    t.title,
+    dm.from_date,
+    d.dept_name
+FROM
+    employees e
+        INNER JOIN
+    dept_manager dm ON e.emp_no = dm.emp_no
+        INNER JOIN
+    titles t ON e.emp_no = t.emp_no
+        INNER JOIN
+    departments d ON dm.dept_no = d.dept_no
+    where t.title = 'Manager'
+    order by e.emp_no asc;
+
