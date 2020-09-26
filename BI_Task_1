@@ -1,0 +1,13 @@
+--How many employees of each gender have worked for the company in any given year in a bar chart
+
+SELECT 
+    YEAR(d.from_date) AS calender_year,
+    e.gender,
+    COUNT(e.emp_no) AS number_of_employees
+FROM
+    t_employees e
+        JOIN
+    t_dept_emp d ON e.emp_no = d.emp_no
+GROUP BY calender_year , e.gender
+having calender_year>=1990
+ORDER BY calender_year ASC;
