@@ -1,0 +1,10 @@
+display film's title, description, inventory_id and store_id associated with each item:
+
+select 
+iv.inventory_id,
+fl.title,
+fl.description,
+iv.store_id
+from inventory iv
+inner join film fl
+on iv.film_id=fl.film_id;
